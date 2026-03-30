@@ -1,5 +1,5 @@
+// app/page.tsx
 import {
-  type SimpleIcon,
   siAngular,
   siBootstrap,
   siCss,
@@ -8,13 +8,11 @@ import {
   siGit,
   siGithub,
   siGraphql,
-  siH2database,
   siHtml5,
   siJavascript,
   siJira,
   siJquery,
   siJsonwebtokens,
-  siKubernetes,
   siLaravel,
   siMysql,
   siNextdotjs,
@@ -25,113 +23,44 @@ import {
   siReact,
   siSpring,
   siSpringboot,
-  siSwagger,
+  siAxios,
   siTailwindcss,
   siTypescript,
   siUml,
+  siMongodb
 } from "simple-icons";
 
-import { BrandIcon } from "./_components/brand-icon";
+import { ContributionGrid } from "./_components/contribution-grid";
+import { EducationCard, type Education } from "./_components/education-card";
+import { ExperienceList } from "./_components/experience-list";
+import { type Experience } from "./_components/experience-card";
+import { ProfileCard, type ProfileInfo } from "./_components/profile-card";
 import { ProjectsSection, type Project } from "./_components/projects-section";
 import { SectionCard, SectionPill } from "./_components/section-card";
+import { StatusBadge } from "./_components/status-badge";
+import { TechSection, type TechCategory } from "./_components/tech-section";
 import { ThemeToggle } from "./_components/theme-toggle";
+import { CertificationCard, type Certification } from "./_components/certification-card";
+import { RecommendationCard, type Recommendation } from "./_components/recommendation-card";
+import { GithubContributionsComponent } from "./_components/GithubContributions";
+import { fetchGithubContributions } from "@/lib/github";
 
-type Experience = {
-  title: string;
-  company: string;
-  period: string;
-  location?: string;
-  points: string[];
-};
+export default async function Home() {
+  const githubContributions = await fetchGithubContributions();
 
-type Education = {
-  title: string;
-  school: string;
-  period: string;
-  details?: string;
-};
-
-type Certification = {
-  name: string;
-  issuer?: string;
-  year?: string;
-};
-
-type Recommendation = {
-  author: string;
-  role?: string;
-  quote: string;
-};
-
-function TechPill({ icon, label }: { icon: SimpleIcon; label: string }) {
-  return (
-    <div className="flex items-center gap-2 rounded-full border border-border bg-panel px-3 py-2">
-      <BrandIcon icon={icon} className="h-4 w-4 text-muted" title={label} />
-      <span className="text-sm font-medium text-foreground">{label}</span>
-    </div>
-  );
-}
-
-function ContributionGrid() {
-  const squares = Array.from({ length: 7 * 18 }, (_, i) => i);
-
-  return (
-    <div className="overflow-hidden rounded-xl border border-border bg-panel p-4">
-      <div className="mb-3 flex items-center justify-between">
-        <div className="text-sm font-medium text-foreground">
-          GitHub contributions
-        </div>
-        <div className="text-xs text-muted">Last 18 weeks</div>
-      </div>
-      <div className="grid grid-rows-7 grid-flow-col gap-1">
-        {squares.map((i) => {
-          const level = (i * 7 + (i % 5) * 3) % 5;
-          const className =
-            level === 0
-              ? "bg-divider"
-              : level === 1
-                ? "bg-muted/20"
-                : level === 2
-                  ? "bg-muted/40"
-                  : level === 3
-                    ? "bg-muted/60"
-                    : "bg-accent/60";
-
-          return (
-            <div
-              key={i}
-              className={`h-3 w-3 rounded-[3px] ${className}`}
-            />
-          );
-        })}
-      </div>
-      <div className="mt-3 flex items-center gap-2 text-xs text-muted">
-        <span>Less</span>
-        <span className="h-3 w-3 rounded-[3px] bg-divider" />
-        <span className="h-3 w-3 rounded-[3px] bg-muted/20" />
-        <span className="h-3 w-3 rounded-[3px] bg-muted/40" />
-        <span className="h-3 w-3 rounded-[3px] bg-muted/60" />
-        <span className="h-3 w-3 rounded-[3px] bg-accent/60" />
-        <span>More</span>
-      </div>
-    </div>
-  );
-}
-
-export default function Home() {
-  const profile = {
-    name: "Your Name",
+  const profile: ProfileInfo = {
+    name: "Achraf Ait Haddouch",
     role: "Full-stack Developer",
-    location: "City, Country",
-    email: "you@example.com",
-    phone: "+00 00 00 00 00",
-    website: "your-domain.com",
+    location: "Agadir, Morocco",
+    email: "achraf.gm@gmail.com",
+    phone: "+212 6 55 26 63 91",
+    cv: "https://example.com/cv.pdf",
     linkedIn: "https://www.linkedin.com/in/your-handle",
     github: "https://github.com/your-handle",
   };
 
   const resume =
-    "Write a short résumé that summarizes your experience, the kind of roles you’re targeting, and the impact you’ve delivered. Keep it concise and specific.";
+    "Junior passionné par la création d'applications web modernes et performantes. Spécialisé dans l'écosystème JavaScript (MongoDB, Express, React, Node.js) et Next.js, je transforme des idées complexes en solutions numériques fluides. Mon approche combine rigueur technique, design moderne avec Tailwind CSS et une volonté constante d'intégrer l'intelligence artificielle pour enrichir l'expérience utilisateur.";
 
   const experiences: Experience[] = [
     {
@@ -203,7 +132,7 @@ export default function Home() {
     },
   ];
 
-  const technos = [
+  const technos: TechCategory[] = [
     {
       label: "Frontend",
       items: [
@@ -234,7 +163,7 @@ export default function Home() {
       items: [
         { icon: siMysql, label: "MySQL" },
         { icon: siPostgresql, label: "PostgreSQL" },
-        { icon: siH2database, label: "H2" },
+        { icon: siMongodb, label: "MongoDB" },
       ],
     },
     {
@@ -245,8 +174,8 @@ export default function Home() {
       label: "API",
       items: [
         { icon: siPostman, label: "Postman" },
-        { icon: siSwagger, label: "Swagger" },
         { icon: siGraphql, label: "GraphQL" },
+        { icon: siAxios, label: "Axios" },
       ],
     },
     {
@@ -255,7 +184,6 @@ export default function Home() {
         { icon: siGit, label: "Git" },
         { icon: siGithub, label: "GitHub" },
         { icon: siDocker, label: "Docker" },
-        { icon: siKubernetes, label: "Kubernetes" },
         { icon: siJira, label: "Jira" },
       ],
     },
@@ -273,153 +201,34 @@ export default function Home() {
     <div className="flex flex-1 justify-center px-4 py-10">
       <main className="w-full max-w-3xl space-y-6">
         <header className="flex items-center justify-between">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-panel px-4 py-2 text-sm">
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            <span className="text-foreground">Open to work</span>
-            <span className="text-muted">•</span>
-            <span className="text-muted">Full-time / Freelance</span>
-          </div>
+          <StatusBadge status="Open to work" details="Full-time / Freelance" />
           <ThemeToggle />
         </header>
 
-        <section className="rounded-2xl border border-border bg-panel p-6">
-          <div className="font-hand text-6xl leading-none text-foreground sm:text-7xl">
-            hello
-          </div>
-          <div className="mt-3 text-sm text-muted">
-            {profile.name} — {profile.role}
-          </div>
-        </section>
+        
+        <ProfileCard profile={profile} />
 
-        <section className="rounded-2xl border border-border bg-panel p-6">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-divider text-sm font-semibold text-foreground">
-                {profile.name
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((p) => p[0]?.toUpperCase())
-                  .join("")}
-              </div>
-              <div>
-                <div className="text-base font-semibold text-foreground">
-                  {profile.name}
-                </div>
-                <div className="text-sm text-muted">{profile.role}</div>
-                <div className="mt-1 text-sm text-muted">{profile.location}</div>
-              </div>
-            </div>
-
-            <div className="grid gap-2 text-sm">
-              <div className="flex items-center justify-between gap-6">
-                <span className="text-muted">Email</span>
-                <a className="text-foreground hover:underline" href={`mailto:${profile.email}`}>
-                  {profile.email}
-                </a>
-              </div>
-              <div className="flex items-center justify-between gap-6">
-                <span className="text-muted">Phone</span>
-                <a className="text-foreground hover:underline" href={`tel:${profile.phone}`}>
-                  {profile.phone}
-                </a>
-              </div>
-              <div className="flex items-center justify-between gap-6">
-                <span className="text-muted">Website</span>
-                <a
-                  className="text-foreground hover:underline"
-                  href={`https://${profile.website}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {profile.website}
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href={profile.linkedIn}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-10 items-center justify-center rounded-full border border-border bg-panel px-4 text-sm font-medium text-foreground hover:bg-divider"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-10 items-center justify-center rounded-full border border-border bg-panel px-4 text-sm font-medium text-foreground hover:bg-divider"
-            >
-              GitHub
-            </a>
-          </div>
-        </section>
-
-        <SectionCard title="Résumé" right={<SectionPill>About</SectionPill>}>
+        <SectionCard title="Résumé" right={<SectionPill >About</SectionPill>}>
           <p className="text-sm leading-7 text-muted">{resume}</p>
         </SectionCard>
 
         <SectionCard title="Contributions" contentClassName="mt-4">
           <ContributionGrid />
+          <GithubContributionsComponent contributions={githubContributions} />
         </SectionCard>
 
         <SectionCard title="Technos" right={<SectionPill>Stack</SectionPill>}>
-          <div className="grid gap-6">
-            {technos.map((category) => (
-              <div key={category.label} className="space-y-3">
-                <div className="text-xs font-semibold tracking-wide text-muted">
-                  {category.label.toUpperCase()}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.items.map((item) => (
-                    <TechPill key={item.label} icon={item.icon} label={item.label} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <TechSection categories={technos} />
         </SectionCard>
 
         <SectionCard title="Expériences" right={<SectionPill>Work</SectionPill>}>
-          <div className="space-y-5">
-            {experiences.map((exp) => (
-              <div key={`${exp.title}-${exp.company}`} className="rounded-xl border border-border bg-panel p-4">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="text-sm font-semibold text-foreground">
-                    {exp.title} · {exp.company}
-                  </div>
-                  <div className="text-xs text-muted">
-                    {exp.period}
-                    {exp.location ? ` · ${exp.location}` : ""}
-                  </div>
-                </div>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted">
-                  {exp.points.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <ExperienceList experiences={experiences} />
         </SectionCard>
 
         <SectionCard title="Formation" right={<SectionPill>Education</SectionPill>}>
           <div className="space-y-3">
             {education.map((ed) => (
-              <div key={`${ed.title}-${ed.school}`} className="rounded-xl border border-border bg-panel p-4">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="text-sm font-semibold text-foreground">
-                    {ed.title}
-                  </div>
-                  <div className="text-xs text-muted">{ed.period}</div>
-                </div>
-                <div className="mt-1 text-sm text-muted">{ed.school}</div>
-                {ed.details ? (
-                  <div className="mt-2 text-sm text-muted">{ed.details}</div>
-                ) : null}
-              </div>
+              <EducationCard key={`${ed.title}-${ed.school}`} education={ed} />
             ))}
           </div>
         </SectionCard>
@@ -433,13 +242,8 @@ export default function Home() {
           right={<SectionPill>Credentials</SectionPill>}
         >
           <div className="grid gap-3 sm:grid-cols-2">
-            {certifications.map((c) => (
-              <div key={c.name} className="rounded-xl border border-border bg-panel p-4">
-                <div className="text-sm font-semibold text-foreground">{c.name}</div>
-                <div className="mt-1 text-sm text-muted">
-                  {[c.issuer, c.year].filter(Boolean).join(" · ")}
-                </div>
-              </div>
+            {certifications.map((cert) => (
+              <CertificationCard key={cert.name} certification={cert} />
             ))}
           </div>
         </SectionCard>
@@ -449,14 +253,8 @@ export default function Home() {
           right={<SectionPill>People</SectionPill>}
         >
           <div className="grid gap-3 sm:grid-cols-2">
-            {recommendations.map((r) => (
-              <div key={r.author} className="rounded-xl border border-border bg-panel p-4">
-                <div className="text-sm font-semibold text-foreground">
-                  {r.author}
-                </div>
-                {r.role ? <div className="text-xs text-muted">{r.role}</div> : null}
-                <div className="mt-3 text-sm leading-7 text-muted">“{r.quote}”</div>
-              </div>
+            {recommendations.map((rec) => (
+              <RecommendationCard key={rec.author} recommendation={rec} />
             ))}
           </div>
         </SectionCard>
