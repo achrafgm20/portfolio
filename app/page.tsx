@@ -36,9 +36,9 @@ import { StatusBadge } from "./_components/status-badge";
 import { TechSection, type TechCategory } from "./_components/tech-section";
 import { ThemeToggle } from "./_components/theme-toggle";
 import { CertificationCard, type Certification } from "./_components/certification-card";
-import { RecommendationCard, type Recommendation } from "./_components/recommendation-card";
 import { GithubContributionsComponent } from "./_components/GithubContributions";
 import { fetchGithubContributions } from "@/lib/github";
+import AutoVoice from "./_components/AutoVoice";
 
 export default async function Home() {
   const githubContributions = await fetchGithubContributions();
@@ -57,37 +57,46 @@ export default async function Home() {
   const resume =
     "Junior passionné par la création d'applications web modernes et performantes. Spécialisé dans l'écosystème JavaScript (MongoDB, Express, React, Node.js) et Next.js, je transforme des idées complexes en solutions numériques fluides. Mon approche combine rigueur technique, design moderne avec Tailwind CSS et une volonté constante d'intégrer l'intelligence artificielle pour enrichir l'expérience utilisateur.";
 
-  const experiences: Experience[] = [
-    {
-      title: "Software Engineer",
-      company: "Company Name",
-      period: "2023 — Present",
-      location: "Remote",
-      points: [
-        "Built and shipped features end-to-end in a modern web stack.",
-        "Improved performance and reliability through profiling and monitoring.",
-        "Collaborated closely with product/design to deliver iterative releases.",
-      ],
-    },
-    {
-      title: "Full-stack Developer",
-      company: "Previous Company",
-      period: "2021 — 2023",
-      points: [
-        "Delivered APIs and UIs with a focus on maintainability.",
-        "Implemented CI/CD and improved developer experience.",
-      ],
-    },
-  ];
+const experiences: Experience[] = [
+  // {
+  //   title: "Full Developer Intern",
+  //   company: "Orange Digital Center",
+  //   period: "2025 - 2026 (4 months)",
+  //   location: "Agadir, Morocco",
+  //   points: [
+  //     "Built and shipped features end-to-end in a modern web stack.",
+  //     "Improved performance and reliability through profiling and monitoring.",
+  //     "Collaborated closely with product/design to deliver iterative releases.",
+  //   ],
+  // },
+  {
+    title: "Commercial",
+    company: "Comptoir General Du Maroc CGM",
+    period: "2021 — 2025",
+    location: "Agadir, Morocco",
+    points: [
+      "Managed client relationships and sales processes.",
+      "Improved customer satisfaction through effective communication and follow-ups.",
+    ],
+  },
+];
 
-  const education: Education[] = [
-    {
-      title: "Degree / Program",
-      school: "School Name",
-      period: "2018 — 2021",
-      details: "Optional details (focus, honors, coursework).",
-    },
-  ];
+const education: Education[] = [
+  {
+    title: "Bootcamp Full Stack Developer ODC",
+    school: "Orange Digital Center",
+    period: "2025 - 2026 (4 mois)",
+    details: "Apprentissage de  React, TypeScript, API , Express , Angular , Docker , AWS , UML BIG O , Algorithme et bonnes pratiques de développement moderne.",
+  },
+  
+  {
+    title: "Licence en Économie et Gestion",
+    school: "Faculté Ibn Zohr",
+    period: "2018 — 2021",
+    details: "Formation en économie, gestion, finance et analyse des marchés.",
+  },
+  
+];
 
   const projects: Project[] = [
     {
@@ -118,14 +127,6 @@ export default async function Home() {
     { name: "Another Certification", issuer: "Issuer", year: "2023" },
   ];
 
-  const recommendations: Recommendation[] = [
-    {
-      author: "Person Name",
-      role: "Role at Company",
-      quote:
-        "Write a short recommendation here — what you did well and how you work with others.",
-    },
-  ];
 
   const technos: TechCategory[] = [
     {
@@ -194,6 +195,7 @@ export default async function Home() {
       <main className="w-full max-w-3xl space-y-6">
         <header className="flex items-center justify-between">
           <StatusBadge status="Open to work" details="Full-time / Freelance" />
+          <AutoVoice />
           <ThemeToggle />
         </header>
 
@@ -239,16 +241,6 @@ export default async function Home() {
           </div>
         </SectionCard>
 
-        <SectionCard
-          title="Recommandations"
-          right={<SectionPill>People</SectionPill>}
-        >
-          <div className="grid gap-3 sm:grid-cols-2">
-            {recommendations.map((rec) => (
-              <RecommendationCard key={rec.author} recommendation={rec} />
-            ))}
-          </div>
-        </SectionCard>
 
         <footer className="pb-6 pt-2 text-center text-xs text-muted">
           Développé par <span className="text-foreground">{profile.name}</span>
