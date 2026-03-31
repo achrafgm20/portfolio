@@ -13,24 +13,19 @@ import {
   siJira,
   siJquery,
   siJsonwebtokens,
-  siLaravel,
   siMysql,
   siNextdotjs,
-  siOpenjdk,
-  siPhp,
   siPostgresql,
   siPostman,
   siReact,
-  siSpring,
-  siSpringboot,
   siAxios,
   siTailwindcss,
   siTypescript,
+  siExpress,
   siUml,
   siMongodb
 } from "simple-icons";
 
-import { ContributionGrid } from "./_components/contribution-grid";
 import { EducationCard, type Education } from "./_components/education-card";
 import { ExperienceList } from "./_components/experience-list";
 import { type Experience } from "./_components/experience-card";
@@ -151,11 +146,8 @@ export default async function Home() {
     {
       label: "Backend",
       items: [
-        { icon: siOpenjdk, label: "Java" },
-        { icon: siSpring, label: "Spring" },
-        { icon: siSpringboot, label: "Spring Boot" },
-        { icon: siPhp, label: "PHP" },
-        { icon: siLaravel, label: "Laravel" },
+        { icon: siExpress, label: "Express" },
+
       ],
     },
     {
@@ -213,11 +205,10 @@ export default async function Home() {
         </SectionCard>
 
         <SectionCard title="Contributions" contentClassName="mt-4">
-          <ContributionGrid />
           <GithubContributionsComponent contributions={githubContributions} />
         </SectionCard>
 
-        <SectionCard title="Technos" right={<SectionPill>Stack</SectionPill>}>
+        <SectionCard title="Framwork" right={<SectionPill>Stack</SectionPill>}>
           <TechSection categories={technos} />
         </SectionCard>
 

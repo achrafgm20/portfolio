@@ -15,8 +15,8 @@ export function TechSection({ categories }: TechSectionProps) {
   return (
     <div className="grid gap-6">
       {categories.map((category) => (
-        <div key={category.label} className="space-y-3">
-          <div className="text-xs font-semibold tracking-wide text-muted">
+        <div key={category.label} className=" flex  justify-start items-start gap-2 space-y-3">
+          <div className="text-xs min-w-32 font-semibold tracking-wide text-muted">
             {category.label.toUpperCase()}
           </div>
           <div className="flex flex-wrap gap-2">
