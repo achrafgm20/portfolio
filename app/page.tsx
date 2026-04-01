@@ -28,6 +28,7 @@ import {
 
 import { EducationCard, type Education } from "./_components/education-card";
 import { ExperienceList } from "./_components/experience-list";
+import { projects } from "@/lib/data";
 import { type Experience } from "./_components/experience-card";
 import { ProfileCard, type ProfileInfo } from "./_components/profile-card";
 import { ProjectsSection, type Project } from "./_components/projects-section";
@@ -97,30 +98,6 @@ const education: Education[] = [
   },
   
 ];
-
-  const projects: Project[] = [
-    {
-      name: "Project One",
-      description: "A short description of what it is and what you built.",
-      tags: ["Next.js", "TypeScript", "Tailwind"],
-      href: "https://example.com",
-    },
-    {
-      name: "Project Two",
-      description: "Describe the problem, solution, and the outcome.",
-      tags: ["API", "Auth", "PostgreSQL"],
-    },
-    {
-      name: "Project Three",
-      description: "Keep it short and impact-focused.",
-      tags: ["React", "Design System"],
-    },
-    {
-      name: "Project Four",
-      description: "An extra project to demonstrate the Show More behavior.",
-      tags: ["Docker", "CI/CD"],
-    },
-  ];
 
   const certifications: Certification[] = [
     { name: "Certification Name", issuer: "Issuer", year: "2024" },
@@ -195,7 +172,7 @@ const education: Education[] = [
       <main className="w-full max-w-3xl space-y-6">
         <header className="flex items-center justify-between">
           <StatusBadge status="Open to work" details="Full-time / Freelance" />
-          <AutoVoice />
+          {/* <AutoVoice /> */}
           <ThemeToggle />
         </header>
 

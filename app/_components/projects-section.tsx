@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 export type Project = {
@@ -7,6 +8,10 @@ export type Project = {
   description: string;
   tags: string[];
   href?: string;
+  fulldescription?: string;
+  linkUrl?: string;
+  videoUrl?: string;
+  media?: { type: "image" | "video"; src: string; alt: string }[];
 };
 
 type ProjectsSectionProps = {
@@ -28,11 +33,10 @@ export function ProjectsSection({
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-2">
         {visible.map((project) => (
-          <a
+          <Link
             key={project.name}
             href={project.href ?? "#"}
             className="block rounded-xl border border-border bg-panel p-4 hover:bg-divider"
-            target={project.href ? "_blank" : undefined}
             rel={project.href ? "noreferrer" : undefined}
           >
             <div className="flex items-start justify-between gap-3">
@@ -58,7 +62,7 @@ export function ProjectsSection({
                 </span>
               ))}
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
