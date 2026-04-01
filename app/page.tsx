@@ -31,7 +31,7 @@ import { ExperienceList } from "./_components/experience-list";
 import { projects } from "@/lib/data";
 import { type Experience } from "./_components/experience-card";
 import { ProfileCard, type ProfileInfo } from "./_components/profile-card";
-import { ProjectsSection, type Project } from "./_components/projects-section";
+import { ProjectsSection } from "./_components/projects-section";
 import { SectionCard, SectionPill } from "./_components/section-card";
 import { StatusBadge } from "./_components/status-badge";
 import { TechSection, type TechCategory } from "./_components/tech-section";
@@ -39,7 +39,7 @@ import { ThemeToggle } from "./_components/theme-toggle";
 import { CertificationCard, type Certification } from "./_components/certification-card";
 import { GithubContributionsComponent } from "./_components/GithubContributions";
 import { fetchGithubContributions } from "@/lib/github";
-import AutoVoice from "./_components/AutoVoice";
+
 
 export default async function Home() {
   const githubContributions = await fetchGithubContributions();

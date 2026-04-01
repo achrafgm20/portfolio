@@ -49,7 +49,7 @@ export async function fetchGithubContributions(): Promise<GithubContributions> {
 
   const data = await res.json();
   const weeks = data.data.user.contributionsCollection.contributionCalendar.weeks;
-  const days = weeks.flatMap((week: any) => week.contributionDays);
+  const days = weeks.flatMap((week: { contributionDays: ContributionDay[] }) => week.contributionDays);
 
   return {
     totalContributions:

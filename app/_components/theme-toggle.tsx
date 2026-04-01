@@ -9,9 +9,11 @@ export function ThemeToggle() {
 
   // 2. Only run client-side logic after mounting
   useEffect(() => {
-    setMounted(true);
     const isDarkTheme = document.documentElement.classList.contains("dark");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDark(isDarkTheme);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {

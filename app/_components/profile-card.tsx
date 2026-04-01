@@ -93,7 +93,7 @@ function DetailItem({ icon, label, isLink, href }: { icon: React.ReactNode, labe
   return isLink ? <a href={href} target="_blank" rel="noreferrer" className="block w-fit">{content}</a> : content;
 }
 
-function SocialButton({ href, label, username, icon }: { href: string, label: string, username: string, icon: string }) {
+function SocialButton({ href, label, username }: { href: string, label: string, username: string, icon: string }) {
   return (
     <a
       href={href}
