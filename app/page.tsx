@@ -47,7 +47,7 @@ export default async function Home() {
   const githubContributions = await fetchGithubContributions();
 
   const profile: ProfileInfo = {
-    name: "Achraf Ait Haddouch",
+    name: "Ait Haddouch Achraf",
     role: "Full-stack Developer",
     location: "Agadir, Morocco",
     email: "achraf.gm@gmail.com",
