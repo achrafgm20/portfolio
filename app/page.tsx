@@ -26,6 +26,8 @@ import {
   siMongodb
 } from "simple-icons";
 
+
+
 import { EducationCard, type Education } from "./_components/education-card";
 import { ExperienceList } from "./_components/experience-list";
 import { projects } from "@/lib/data";
