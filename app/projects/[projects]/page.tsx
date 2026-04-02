@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data";
 import Image from "next/image";
+import ProjectGallery from "@/app/_components/project-gallery";
 
 type Props = {
   params: Promise<{
@@ -13,6 +14,7 @@ export default async function ProjectPage({ params }: Props) {
   const resolvedParams = await params;
   const projectSlug = resolvedParams.projects;
 
+  
   // Find the project based on the slug in the URL
   const project = projects.find(
     (p) => p.href?.split("/").pop() === projectSlug
@@ -50,21 +52,7 @@ export default async function ProjectPage({ params }: Props) {
 
         {/* Media / Showcase */}
         {project.media && project.media.length > 0 && (
-          <section className="overflow-hidden rounded-2xl border border-border bg-panel shadow-sm">
-            {project.media.map((item, index) =>(
-                <Image
-                  width={1200}
-                  height={800}
-                  key={index}
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-auto object-cover max-h-[400px]"
-                  loading="eager"
-                />
-            
-              )
-            )}
-          </section>
+          <ProjectGallery media={project.media} />
         )}
 
         {/* Main Content & Details */}

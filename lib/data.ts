@@ -13,9 +13,51 @@ export const projects: Project[] = [
   media: [
     {
       type: "image",
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/sellerNotifaction2_exwrfw.png",
       alt: "AtlasSaaS dashboard and marketplace interface",
-    }
+    }, 
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/sellerNotification1_psquhs.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+     {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/sellerDashaborad_ake054.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/productDetails_jua7rd.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/paymentStripe_vwnsuz.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/v1775122296/payememtsSuccs_w9acsr.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/v1775122293/liveChatSeller_hby1tq.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/v1775122289/BuyersordersList_webbco.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/v1775122278/buyerDashbaord2_iqg0br.png",
+      alt: "AtlasSaaS dashboard and marketplace interface",
+    },
+    
+    
   ],
   
   tags: [
