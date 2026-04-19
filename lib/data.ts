@@ -81,8 +81,8 @@ export const projects: Project[] = [
   
   fulldescription: "LuxParfum is a production-ready full-stack e-commerce platform built specifically for luxury fragrance retailers. It delivers a seamless shopping experience for customers with intelligent product discovery, smart filtering by category, brand, price range, and notes. Customers can browse, add items to cart, and complete purchases without requiring an account.\n\nThe platform features a comprehensive vendor dashboard enabling sellers to monitor sales performance by period, manage product inventory and stock levels, export detailed order reports, and access real-time sales statistics with visual analytics. Built with Next.js 16 App Router and TypeScript, LuxParfum leverages modern technologies including PostgreSQL with Prisma ORM, betterAuth for secure authentication, Zustand for state management, and Recharts for data visualization.\n\nThe application supports transactional emails via Resend, responsive mobile-first design with Tailwind CSS and shadcn/ui components, and implements advanced SEO practices including dynamic metadata, Open Graph tags, auto-generated sitemaps, and JSON-LD structured data. Deployed on Ubuntu VPS with Nginx reverse proxy, PM2 process management, and SSL encryption via Certbot, LuxParfum ensures production-grade performance, security, and scalability.",
   
-  linkUrl: "https://github.com/yourusername/luxparfum",
-  videoUrl: "https://drive.google.com/file/d/your-video-id/view?usp=sharing",
+  linkUrl: "https://github.com/achrafgm20/luxstore",
+  videoUrl: "https://youtu.be/AzZwg44RYVI",
   
   media: [
     {
