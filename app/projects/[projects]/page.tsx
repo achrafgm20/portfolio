@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/data";
-import Image from "next/image";
 import ProjectGallery from "@/app/_components/project-gallery";
 
 type Props = {
