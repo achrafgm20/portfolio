@@ -52,9 +52,9 @@ export default async function Home() {
     location: "Agadir, Morocco",
     email: "achraf.gm@gmail.com",
     phone: "+212 6 55 26 63 91",
-    cv: "https://example.com/cv.pdf",
-    linkedIn: "https://www.linkedin.com/in/your-handle",
-    github: "https://github.com/your-handle",
+    cv: "https://drive.google.com/file/d/1btyUZjSOC8DNYsd1w_4pemkhxDPSJQpp/view?usp=sharing",
+    linkedIn: "https://www.linkedin.com/in/achraf-ait-haddouch-17b762127/",
+    github: "https://github.com/achrafgm20",
   };
 
   const resume =

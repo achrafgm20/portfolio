@@ -67,7 +67,7 @@ export function ProfileCard({ profile }: ProfileCardProps) {
           href={profile.linkedIn} 
           label="LinkedIn" 
           username="Achraf Ait Haddouch" 
-          icon="/linkedin-icon.svg" // Replace with actual icon path or Lucide icon
+          icon="/ddd.webp" 
         />
         <SocialButton 
           href={profile.github} 
@@ -93,7 +93,7 @@ function DetailItem({ icon, label, isLink, href }: { icon: React.ReactNode, labe
   return isLink ? <a href={href} target="_blank" rel="noreferrer" className="block w-fit">{content}</a> : content;
 }
 
-function SocialButton({ href, label, username }: { href: string, label: string, username: string, icon: string }) {
+function SocialButton({ href, label, username, icon }: { href: string, label: string, username: string, icon: string }) {
   return (
     <a
       href={href}
@@ -102,9 +102,14 @@ function SocialButton({ href, label, username }: { href: string, label: string, 
       className="flex  items-center justify-between rounded-md border border-border bg-secondary/30 p-4 transition-all hover:bg-secondary/50"
     >
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
-           {/* You can use an <img> or Lucide Icon here */}
-           <span className="font-bold  text-blue-600">{label[0]}</span> 
+        <div className="h-10 w-10 rounded-lg bg-white flex items-center justify-center shadow-sm overflow-hidden">
+           <Image 
+             src={icon} 
+             alt={`${label} icon`} 
+             width={24} 
+             height={24} 
+             className="h-6 w-6 object-contain"
+           />
         </div>
         <div>
           <div className="text-sm   font-semibold text-foreground">{label}</div>
