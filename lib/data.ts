@@ -166,13 +166,78 @@ export const projects: Project[] = [
   
 
 },
-  {
-    name: "Project Three",
-    description: "Keep it short and impact-focused.",
-    fulldescription: "A highly customizable design system and UI toolkit built with React. It provides a set of accessible, reusable components that drastically reduce development time for frontend teams.",
-    tags: ["React", "Design System", "Storybook", "Figma"],
-    href: "/projects/project-three",
-  },
+{
+  name: "MindCare",
+  description: "An AI-powered personality analysis platform helping users discover their true selves through MBTI insights with a futuristic UI.",
+  
+  fulldescription: "MindCare is a premium, AI-powered personality analysis platform designed to help users discover their true selves through the lens of MBTI (Myers-Briggs Type Indicator). Featuring a futuristic UI and cutting-edge AI integration, MindCare provides deep insights into personality traits, behaviors, and potential growth paths.\n\nThe platform leverages NVIDIA API integration for advanced personality analysis, delivering intelligent, data-driven insights that help users understand their psychological profile. Built with Next.js 16 App Router and React 19, MindCare combines modern frontend technologies including Tailwind CSS 4 for responsive design, Framer Motion for engaging animations, and Radix UI primitives for accessible components.\n\nBacked by PostgreSQL via Neon for reliable data storage and Prisma ORM for efficient database operations, MindCare implements secure authentication through Better Auth. The platform ensures a seamless user experience with real-time personality analysis, personalized recommendations, and interactive visualizations. Deployed for production performance, MindCare delivers scalable, secure, and user-centric insights into personality development.",
+  
+  linkUrl: "https://github.com/achrafgm20/MindCare1",
+  videoUrl: "https://youtu.be/D1P9gDPSmbc",
+  
+  media: [
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984889/Screenshot_2026-05-05_at_11.46.59_w13wp1.png",
+      alt: "MBTI personality assessment interface with intuitive questions",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984852/Screenshot_2026-05-05_at_11.47.09_nqx8eq.png",
+      alt: "MindCare homepage with AI-powered personality analysis showcase",
+    },
+    
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984888/Screenshot_2026-05-05_at_11.47.27_jg8yja.png",
+      alt: "Detailed personality profile with traits and behavioral insights",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984872/Screenshot_2026-05-05_at_11.47.22_rpg9lo.png",
+      alt: "AI-generated personality insights and growth recommendations",
+    },
+    
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984893/Screenshot_2026-05-05_at_11.47.56_uprqhz.png",
+      alt: "Personalized career and relationship compatibility insights",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984898/Screenshot_2026-05-05_at_11.47.47_ahdvqt.png",
+      alt: "User dashboard with personality analysis history and progress",
+    },
+    {
+      type: "image",
+      src: "https://res.cloudinary.com/dkhmh3oph/image/upload/q_auto/f_auto/v1777984902/Screenshot_2026-05-05_at_11.47.40_ycmksd.png",
+      alt: "Futuristic UI with Framer Motion animations and smooth interactions",
+    },
+    
+    
+  ],
+  
+  tags: [
+    "Next.js 16",
+    "App Router",
+    "React 19",
+    "TypeScript",
+    "PostgreSQL",
+    "Prisma ORM",
+    "Better Auth",
+    "Tailwind CSS 4",
+    "Framer Motion",
+    "Radix UI",
+    "Lucide React",
+    "NVIDIA API",
+    "MBTI Analysis",
+    "AI-Powered"
+  ],
+  
+  href: "/projects/mindcare",
+  
+
+},
   {
     name: "Project Four",
     description: "An extra project to demonstrate the Show More behavior.",
