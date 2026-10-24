@@ -2,6 +2,55 @@ import { Project } from "@/app/_components/projects-section";
 
 export const projects: Project[] = [
   {
+  name: "AtlasTech",
+  description: "A multi-tenant SaaS for e-commerce sellers with storefronts, inventory, invoicing, analytics, and a companion mobile app.",
+
+  fulldescription: "AtlasTech is a production-grade, multi-tenant seller management platform built for modern e-commerce operations. Sellers get a complete dashboard to manage products and stock, track clients, generate invoices and warranty invoices, export reports, and follow sales through period-based analytics. A built-in AI assistant writes product descriptions, and a store designer lets each seller customize their own public storefront served on a dedicated subdomain.\n\nAn admin console gives full control over the platform, including seller approval, user management, a shared product catalog, transactions, reports, and storage. Authentication is handled by Supabase Auth with email and Google OAuth, protected by Turnstile and rate limiting, while tenancy is enforced at the application layer so every query is scoped to the authenticated seller. Data lives in PostgreSQL with Prisma ORM.\n\nA companion Expo / React Native app lets sellers run their shop from their phone against the same backend, with web push notifications keeping them up to date. Built with Next.js 16, React 19, TypeScript, TanStack Query, Tailwind CSS, and shadcn/ui, AtlasTech is monitored with Sentry, runs scheduled jobs through Vercel Cron, and is covered by a Vitest test suite.",
+
+  linkUrl: "https://github.com/achrafgm20/AtlasTech",
+
+  tags: [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Supabase",
+    "PostgreSQL",
+    "Prisma ORM",
+    "TanStack Query",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Recharts",
+    "Expo / React Native",
+    "Sentry",
+    "Vitest",
+    "Multi-tenant SaaS"
+  ],
+
+  href: "/projects/atlastech"
+},
+  {
+  name: "Station AI",
+  description: "An AI incubator that turns a spoken business idea into a Business Model Canvas, a market study, and a live landing page in minutes.",
+
+  fulldescription: "Station AI (L'Incubateur Express) is an AI-powered entrepreneurship studio built for Orange Digital Center. It helps aspiring founders go from a rough idea to a clear strategy and a working landing page in about three minutes. Users simply pitch their idea by voice, and the speech is transcribed into editable text using Whisper via Groq.\n\nThe AI then structures the pitch into Problem, Target, Solution, and Offer, and generates a complete nine-block Business Model Canvas as strict JSON using Llama 3.3 70B. Each canvas is enriched with a regional market study, for example for the Souss-Massa region, so founders understand their local market from day one.\n\nFinally, Station AI generates a responsive, semantic landing page displayed in a live split-screen editor. With one click, the page is deployed and the founder receives a public link, a QR code, and a downloadable PDF incubation report. An AI chat assistant helps with follow-up questions, planning deliverables, and organizing documents, making the platform accessible to entrepreneurs with little technical or strategic background.",
+
+  liveUrl: "https://station-ai-three.vercel.app/",
+
+  tags: [
+    "AI-Powered",
+    "Llama 3.3 70B",
+    "Groq",
+    "Whisper",
+    "Speech-to-Text",
+    "Business Model Canvas",
+    "Landing Page Generation",
+    "Tailwind CSS",
+    "Vercel"
+  ],
+
+  href: "/projects/station-ai"
+},
+  {
   name: "AtlasSaaS",
   description: "A full-stack SaaS marketplace with buyer, seller, and admin workflows, featuring real-time messaging and secure payments.",
   
@@ -238,11 +287,4 @@ export const projects: Project[] = [
   
 
 },
-  {
-    name: "Project Four",
-    description: "An extra project to demonstrate the Show More behavior.",
-    fulldescription: "Implemented an automated CI/CD pipeline and containerized deployment strategy utilizing Docker and GitHub Actions, reducing deployment time by 80%.",
-    tags: ["Docker", "CI/CD", "AWS", "Bash"],
-    href: "/projects/project-four",
-  },
 ];

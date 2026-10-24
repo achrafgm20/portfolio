@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useMemo, useState } from "react";
 
 export type Project = {
   name: string;
@@ -11,28 +8,19 @@ export type Project = {
   fulldescription?: string;
   linkUrl?: string;
   videoUrl?: string;
+  liveUrl?: string;
   media?: { type: "image" | "video"; src: string; alt: string }[];
 };
 
 type ProjectsSectionProps = {
   projects: Project[];
-  initialCount?: number;
 };
 
-export function ProjectsSection({
-  projects,
-  initialCount = 3,
-}: ProjectsSectionProps) {
-  const [showAll, setShowAll] = useState(false);
-
-  const visible = useMemo(() => {
-    return showAll ? projects : projects.slice(0, initialCount);
-  }, [projects, showAll, initialCount]);
-
+export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-2">
-        {visible.map((project) => (
+        {projects.map((project) => (
           <Link
             key={project.name}
             href={project.href ?? "#"}
@@ -65,16 +53,6 @@ export function ProjectsSection({
           </Link>
         ))}
       </div>
-
-      {projects.length > initialCount ? (
-        <button
-          type="button"
-          className="inline-flex h-10 items-center justify-center rounded-full border border-border bg-panel px-4 text-sm font-medium text-foreground hover:bg-divider"
-          onClick={() => setShowAll((v) => !v)}
-        >
-          {showAll ? "Show Less" : "Show More"}
-        </button>
-      ) : null}
     </div>
   );
 }

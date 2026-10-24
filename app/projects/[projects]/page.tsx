@@ -63,32 +63,49 @@ export default async function ProjectPage({ params }: Props) {
               <p>{project.fulldescription || "More details coming soon."}</p>
             </div>
             
-            {project.linkUrl && (
+            {(project.liveUrl || project.linkUrl || project.videoUrl) && (
               <div className="pt-4 flex space-x-2">
-                <a
-                  href={project.linkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                 className="inline-flex h-11 items-center justify-center rounded-xl bg-foreground px-6 text-sm font-semibold text-page hover:opacity-90 transition"
-                 > 
-                 Github Project
-                  <span aria-hidden="true" className="ml-2">
-                    ↗
-                  </span>
-                </a>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center justify-center rounded-xl bg-foreground px-6 text-sm font-semibold text-page hover:opacity-90 transition"
+                  >
+                    Live Demo
+                    <span aria-hidden="true" className="ml-2">
+                      ↗
+                    </span>
+                  </a>
+                )}
 
-                <a
-                  href={project.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-11 items-center justify-center rounded-xl bg-foreground px-6 text-sm font-semibold text-page hover:opacity-90 transition"
-                 > 
-                
-                  Video of Project
-                  <span aria-hidden="true" className="ml-2">
-                    ↗
-                  </span>
-                </a>
+                {project.linkUrl && (
+                  <a
+                    href={project.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center justify-center rounded-xl bg-foreground px-6 text-sm font-semibold text-page hover:opacity-90 transition"
+                  >
+                    Github Project
+                    <span aria-hidden="true" className="ml-2">
+                      ↗
+                    </span>
+                  </a>
+                )}
+
+                {project.videoUrl && (
+                  <a
+                    href={project.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 items-center justify-center rounded-xl bg-foreground px-6 text-sm font-semibold text-page hover:opacity-90 transition"
+                  >
+                    Video of Project
+                    <span aria-hidden="true" className="ml-2">
+                      ↗
+                    </span>
+                  </a>
+                )}
               </div>
             )}
           </section>

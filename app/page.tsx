@@ -174,7 +174,6 @@ const education: Education[] = [
       <main className="w-full max-w-3xl space-y-6">
         <header className="flex items-center justify-between">
           <StatusBadge status="Open to work" details="Full-time / Freelance" />
-          {/* <AutoVoice /> */}
           <ThemeToggle />
         </header>
 
@@ -206,7 +205,7 @@ const education: Education[] = [
         </SectionCard>
 
         <SectionCard title="Projets" right={<SectionPill>Selected</SectionPill>}>
-          <ProjectsSection projects={projects} initialCount={3} />
+          <ProjectsSection projects={projects} />
         </SectionCard>
 
         <SectionCard
